@@ -46,15 +46,4 @@ app.listen(port , ()=>{
     console.log(`app is running on port ${port}`)
 })
 
-// geocode("istanbul", (err , data) => {
-//     if(err){
-//         return console.log(err)
-//     }
-//     forecast(data.latitude , data.longitude , (err , data) => {
-//         if(err){
-//             return console.log(err)
-//         }
-//     })
-// })
-
 
