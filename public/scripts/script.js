@@ -6,6 +6,9 @@ sbmt.addEventListener('click' , (e)=>{
     const form = document.getElementById('form1'); 
 
     console.log(address)
+    forcast.innerText = '';
+    addressView.innerText = '';
+    tempr.innerText = '';
     weatherLoad()
     form.reset()
 })
