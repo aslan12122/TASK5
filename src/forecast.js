@@ -19,7 +19,10 @@ request({url , json: true} , (error , response)=> {
             weather: response.body.current.condition.text , 
             temperature: response.body.current.temp_c , 
             }
-             callback(undefined , `weather is ${object.weather} temperature is ${object.temperature}`)
+             callback(undefined , {
+                weather: `wearher is ${object.weather}` , 
+                temperature: `temperature is ${object.temperature}`
+             })
     }
 })
 };

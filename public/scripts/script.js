@@ -1,8 +1,10 @@
-const form = document.getElementById('form1'); 
+const sbmt = document.getElementById('sbmt'); 
 
-form.addEventListener('submit' , (e)=>{
+sbmt.addEventListener('click' , (e)=>{
     e.preventDefault();
     const address = document.getElementById('input').value
+    const form = document.getElementById('form1'); 
+
     console.log(address)
     weatherLoad()
     form.reset()
@@ -10,8 +12,10 @@ form.addEventListener('submit' , (e)=>{
 
 
 const forcast = document.getElementById('forcast'); 
+const tempr = document.getElementById('tempr');
 const error = document.getElementById('err'); 
 const addressView = document.getElementById('addressView'); 
+
 
 let weatherLoad = async ()=> {
     try{
@@ -26,16 +30,20 @@ let weatherLoad = async ()=> {
             addressView.innerText = '';
         }
         else{
+        setTimeout(()=> {
+            forcast.innerText = data.data.weather;
+          error.innerText = '';
             setTimeout(()=>{
-                forcast.innerText = data.data
-                error.innerText = '';
+                tempr.innerText = data.data.temperature;
                 setTimeout(()=>{
                     addressView.innerText = address;
-                },1000)
-            } ,1000)
+                },500)
+            } ,500)
+        } ,500)
         }
     }
     catch(err){
         console.log(err)
     }
 }
+//sss
